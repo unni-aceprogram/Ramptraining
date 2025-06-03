@@ -168,6 +168,13 @@ img {
     margin-bottom: 20px; /* or more if needed */
 }
 
+.standard-img {
+  max-width: 100%; /* Prevent image from exceeding container width */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Removes inline gap issues */
+  margin: 0 auto;  /* Center image horizontally if needed */
+}
+
 
 /* Footer */
 footer {
