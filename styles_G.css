@@ -231,3 +231,10 @@ footer {
     color: #e58e26;
     transform: scale(1.1);
 }
+
+.standard-img {
+  max-width: 100%; /* Prevent image from exceeding container width */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Removes inline gap issues */
+  margin: 0 auto;  /* Center image horizontally if needed */
+}
