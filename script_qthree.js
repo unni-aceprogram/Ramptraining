@@ -21,12 +21,12 @@ window.addEventListener('load', () => {
   const quizData = [
     {
     "question": "<div class=\"question\">Which specific compartment configuration is found in the ATR aircraft?</div>",
-    "options": ["FWD, Aft, Bulk", "1, 3, 4, 5", "1, 2, 3, 4, 5", "FWD R, FWD L, Rear Fwd, Rear Aft"],
+    "options": ["FWD, Aft, Bulk", "1, 3, 4, 5", "1, 2, 3, 4, 5", "FWD Right, FWD Left, Rear Fwd, Rear Aft"],
     "answer_index": 3,
-    "explanation": "The ATR has four compartments labeled FWD R, FWD L, Rear Fwd, and Rear Aft, unlike the Airbus configurations."
+    "explanation": "The ATR has four compartments labeled FWD Right, FWD Left, Rear Fwd, and Rear Aft, unlike the Airbus configurations."
   },
   {
-    "question": "<div class=\"question\">What is the consequence of a sandwich wrapper being left on the ramp, according to the instructor?</div>",
+    "question": "<div class=\"question\">What is the consequence of a sandwich wrapper being left on the ramp?</div>",
     "options": ["It could dirty the aircraft", "It may distract ramp staff", "It could be sucked into a jet engine and cause millions in damage", "It can block drainage systems"],
     "answer_index": 2,
     "explanation": "Even a sandwich wrapper can be sucked into a jet engine, potentially causing severe damage and costly repairs."
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
     "question": "<div class=\"question\">What unique structural trait helps identify the A321 compared to A320?</div>",
     "options": ["It has propellers", "It has more lavatories", "It has 6 doors and 5 compartments", "It has a larger cockpit"],
     "answer_index": 2,
-    "explanation": "The A321 is longer and has 6 doors and 5 cargo compartments, compared to the A320's 4 doors and 4 compartments."
+    "explanation": "The A321 is 7 meters longer and has 6 doors and 5 cargo compartments, compared to the A320's 4 doors and 4 compartments."
   },
   {
     "question": "<div class=\"question\">What should be done if a FOD bin is missing from a bay area?</div>",
@@ -67,6 +67,12 @@ window.addEventListener('load', () => {
     "answer_index": 3,
     "explanation": "Hotel Mode relies on the APU (Auxiliary Power Unit) to power the aircraft's electrical and air systems with engines off."
   },
+{
+  "question": "<div class=\"question\">You see an unsafe work practice on the ramp or in the terminal. What should you do?<span class=\"asked-in\"></span></div>",
+  "options": ["Ignore it", "Report to Safety", "Report to MOD on shift", "Both A and B"],
+  "answer_index": 3,
+  "explanation": "The correct action is to report the unsafe work practice to both Safety and the Manager on Duty (MOD). This ensures immediate action and proper documentation to maintain a safe working environment."
+},
   {
     "question": "<div class=\"question\">Which of the following components is used by the aircraft only in Hotel Mode and not when using a GPU?</div>",
     "options": ["Main avionics", "External lights", "Own APU for power", "Landing gear"],
@@ -74,10 +80,10 @@ window.addEventListener('load', () => {
     "explanation": "In Hotel Mode, the aircraft uses its own APU. If a GPU is connected, the aircraft is drawing power externally, not using Hotel Mode."
   },
   {
-    "question": "<div class=\"question\">Why is the A321’s door L4 used in 3-door operation instead of L2?</div>",
-    "options": ["L2 is smaller", "To reduce crew workload", "To ease congestion due to longer fuselage", "L2 is only for emergencies"],
+    "question": "<div class=\"question\">Why is the A321’s door L4 used in 3-door operation instead of L2( Not STRETCH A/C) ?</div>",
+    "options": ["L2 is smaller", "To reduce crew workload", "A321 has L1,L3,L4 only on portside", "L2 is only for emergencies"],
     "answer_index": 2,
-    "explanation": "The A321 is longer, and L4 is used to allow faster boarding and deplaning, reducing congestion at the front."
+    "explanation": "The A321 is longer, and has L1,L3,L4 only on portside,  L2 does not exist."
   },
   {
     "question": "<div class=\"question\">What minimum distance must be kept behind an active aircraft engine to avoid jet blast danger?</div>",
@@ -85,24 +91,13 @@ window.addEventListener('load', () => {
     "answer_index": 1,
     "explanation": "Jet blast can project debris and knock personnel over; thus, a 60-meter safety distance behind the engine is required."
   },
-  {
-    "question": "<div class=\"question\">What mnemonic phrase does the instructor use to remind about FOD action?</div>",
-    "options": ["Clean it or leave it", "When in doubt, pick it out", "FOD means forget nothing", "If you see it, ignore it"],
-    "answer_index": 1,
-    "explanation": "The instructor uses the phrase 'When in doubt, pick it out!' to stress the importance of removing any suspect item from the ramp."
-  },
-  {
-    "question": "<div class=\"question\">What aircraft is described as the 'Toyota' of planes by the instructor?</div>",
-    "options": ["A321", "ATR", "A320", "B737"],
-    "answer_index": 2,
-    "explanation": "The A320 is compared to a Toyota for being a common, reliable, and short-haul aircraft frequently seen at airports."
-  },
-  {
-    "question": "<div class=\"question\">Which component of the aircraft is referred to as its ‘torso’?</div>",
-    "options": ["Cockpit", "Fuselage", "Tail", "Wing"],
-    "answer_index": 1,
-    "explanation": "The fuselage is the central body of the aircraft where passengers and cargo are located, likened to the torso."
-  },
+
+{
+  "question": "<div class=\"question\">What is the most appropriate action if you find a Foreign Object Debris (FOD) on the ramp?<span class=\"asked-in\"></span></div>",
+  "options": ["Report it to the nearest supervisor", "Kick it aside to clear the way", "Pick it up and dispose of it in the designated bin", "Ignore it unless it’s in the aircraft path"],
+  "answer_index": 2,
+  "explanation": "FOD must be picked up and disposed of in the designated FOD bin to prevent damage to aircraft and maintain safety on the ramp."
+},
   {
     "question": "<div class=\"question\">How is Hotel Mode different from GPU usage in powering the ATR?</div>",
     "options": ["GPU powers avionics, APU powers hydraulics", "Hotel Mode uses internal APU; GPU is external support", "GPU runs during takeoff", "There is no difference"],
@@ -136,12 +131,18 @@ window.addEventListener('load', () => {
     "options": [
       "Move it manually if possible",
       "Inform the PSHD team for follow-up",
-      "Notify the Agile team and Safety for removal",
+      "Notify the Agile team and Safety for removal and documentation",
       "Report it to the airline’s finance department"
     ],
     "answer_index": 2,
     "explanation": "Ramp staff must report vehicles parked under the aerobridge to the Agile team and Safety for quick removal to prevent operational delays or damage."
   },
+{
+  "question": "<div class=\"question\">Who is responsible for ensuring that Personal Protective Equipment (PPE) is worn correctly on the ramp?<span class=\"asked-in\"></span></div>",
+  "options": ["The safety department", "Only the supervisor", "Each individual employee", "The airport authority"],
+  "answer_index": 2,
+  "explanation": "Each employee is responsible for wearing their PPE correctly to maintain their own safety and comply with regulations."
+},
   {
     "question": "What operational response is required at wind speeds of 25–39 knots according to the wind chart?",
     "options": [
@@ -153,17 +154,13 @@ window.addEventListener('load', () => {
     "answer_index": 2,
     "explanation": "At 25–39 knots, loose items must be secured to prevent them from becoming dangerous projectiles in the wind."
   },
-  {
-    "question": "Which disability can result in cognitive challenges despite average intelligence?",
-    "options": [
-      "Epilepsy",
-      "Multiple Sclerosis",
-      "Learning Disability such as Dyslexia",
-      "Depression"
-    ],
-    "answer_index": 2,
-    "explanation": "Learning disabilities like dyslexia impact reading, writing, or math, despite the individual having average or above-average intelligence."
-  },
+  
+{
+  "question": "<div class=\"question\">For which aircraft is the loading sequence from forward to aft?<span class=\"asked-in\"></span></div>",
+  "options": ["ATR", "Airbus A320", "Airbus A321", "All of the above"],
+  "answer_index": 3,
+  "explanation": "The loading sequence from forward to aft applies to all of the listed aircraft—ATR, Airbus A320, and Airbus A321—to ensure proper weight and balance during loading."
+},
   {
     "question": "What is a key procedural difference between Planned Loading and Final Loading in the LIR?",
     "options": [
@@ -175,50 +172,18 @@ window.addEventListener('load', () => {
     "answer_index": 0,
     "explanation": "Planned Loading is what is intended to go onboard, while Final Loading confirms what physically made it onto the aircraft."
   },
-  {
-    "question": "Why is the Manual Boarding Pass still considered important despite being rarely used?",
-    "options": [
-      "It’s mandatory on every domestic flight",
-      "It is used during security clearance",
-      "It serves as a backup when systems fail",
-      "It tracks in-flight purchases"
-    ],
-    "answer_index": 2,
-    "explanation": "Manual Boarding Passes are used when electronic systems fail, ensuring boarding can still be conducted safely and legally."
-  },
-  {
-    "question": "In the Safety Management System (SMS), what classifies as a hazard?",
-    "options": [
-      "Scheduled flight delay",
-      "A slippery patch on the ramp",
-      "Passenger complaint",
-      "Long queues at security"
-    ],
-    "answer_index": 1,
-    "explanation": "A slippery patch represents a physical hazard with the potential to cause injury or accidents on the ramp."
-  },
-  {
-    "question": "What type of wheelchair is optimized for cabin movement and extra support?",
-    "options": [
-      "WCHR",
-      "WCHS",
-      "Standard Folding Chair",
-      "Ostrich Wheelchair"
-    ],
-    "answer_index": 3,
-    "explanation": "The Ostrich Wheelchair is specially designed for in-cabin use and provides enhanced support and visibility."
-  },
-  {
-    "question": "What’s the correct interpretation of the LDM being referred to as a 'recipe card'?",
-    "options": [
-      "It contains emergency exit instructions",
-      "It dictates passenger meal preferences",
-      "It organizes the load (passengers, cargo, baggage) to maintain aircraft balance",
-      "It explains aircraft maintenance schedules"
-    ],
-    "answer_index": 2,
-    "explanation": "The LDM is like a recipe card because it details the specific load distribution that ensures proper balance and flight safety."
-  },
+   {
+  "question": "<div class=\"question\">What is the difference in wingspan between an Airbus A320 with sharklets and one with winglets?<span class=\"asked-in\"></span></div>",
+  "options": ["0.85 meters", "2.00 meters", "1.70 meters", "3.20 meters"],
+  "answer_index": 2,
+  "explanation": "The Airbus A320 with sharklets has a wingspan that is 1.70 meters wider than the version with standard winglets. Sharklets improve aerodynamic efficiency and fuel savings."
+},
+{
+  "question": "<div class=\"question\">What is the correct action to take during an emergency on the ramp?<span class=\"asked-in\"></span></div>",
+  "options": ["Continue working unless instructed otherwise", "Evacuate the area immediately without informing anyone", "Wait for the supervisor’s announcement", "Stop work safely and follow emergency procedures or instructions from the supervisor"],
+  "answer_index": 3,
+  "explanation": "During an emergency on the ramp, you must stop work safely and follow emergency procedures or instructions from your supervisor. Immediate and correct response is critical to ensure safety."
+},
 {
     "question": "<div class=\"question\">Which item is NOT listed as part of the required Personal Protective Equipment (PPE) before an airside visit?</div>",
     "options": [
@@ -228,19 +193,14 @@ window.addEventListener('load', () => {
       "Rain Boots"
     ],
     "answer_index": 2,
-    "explanation": "The transcript lists ramp safety jacket, ramp safety shoe, ear plugs, safety gloves, cap, face shield, rainwear, and rain boots, but does not mention safety goggles."
+    "explanation": "The module lists ramp safety jacket, ramp safety shoe, ear plugs, safety gloves, cap, face shield, rainwear, and rain boots, but does not mention safety goggles."
   },
-  {
-    "question": "<div class=\"question\">What should a trainee do if they do not receive their PPE at least two days before the airside visit?</div>",
-    "options": [
-      "Wait until the visit day and inform the instructor then",
-      "Inform the batch instructor at least 48 hours prior to the visit",
-      "Buy PPE from an external supplier",
-      "Ignore and proceed without PPE"
-    ],
-    "answer_index": 1,
-    "explanation": "The instructor clearly states trainees must inform their batch instructor at least 48 hours before the visit so PPE can be arranged."
-  },
+ {
+  "question": "<div class=\"question\">Which of the following is a correct statement about the ATR aircraft?<span class=\"asked-in\"></span></div>",
+  "options": ["The ATR A/C doesn't have seat 1A and 1C.", "The ATR A/C accept stretcher(STCR) customers with charges.", "The ATR A/C accept HUM.", "The ATR accepts weapons."],
+  "answer_index": 0,
+  "explanation": "The ATR typically does not have seats labeled 1A and 1C due to its seating configuration. This is a distinguishing feature of this regional turboprop aircraft."
+},
   {
     "question": "<div class=\"question\">According to the notes, which of the following is a DON’T at the airside?</div>",
     "options": [
@@ -252,11 +212,30 @@ window.addEventListener('load', () => {
     "answer_index": 1,
     "explanation": "Walking under aerobridges when they are in motion is explicitly listed as a ‘Don’t’ for airside safety."
   },
+{
+  "question": "<div class=\"question\"> During day time, if a wing walker sees an obstruction on the bay as the aircraft approaches, what should they do?<span class=\"asked-in\"></span></div>",
+  "options": ["Red wand down", "Red wand up", "Red Baton up", "Red Baton down"],
+  "answer_index": 2,
+  "explanation": "When a wing walker sees an obstruction, they should raise the red baton straight up to stop A/C immediately and prevent a collision or unsafe condition."
+},
+{
+  "question": "<div class=\"question\">What precautions should be taken while aircraft fueling is in progress?<span class=\"asked-in\"></span></div>",
+  "options": ["Operate all electronic equipment freely", "Allow customers to come outside the A/C and click photos with Flight Managers permission", "Ensure no smoking or use of mobile phones near the fueling zone", "Perform maintenance activities near the fuel truck"],
+  "answer_index": 2,
+  "explanation": "During fueling, it's critical to ensure that there is no smoking, no use of mobile phones, and that all ignition sources are controlled. These precautions prevent potential fire or explosion hazards."
+},
+
+{
+  "question": "<div class=\"question\">What is the safety gap required between the BFL and the aircraft?<span class=\"asked-in\"></span></div>",
+  "options": ["2 inches", "4 inches", "1 inch", "3 inches"],
+  "answer_index": 0,
+  "explanation": "The safety gap between the BFL and the aircraft should be 2 inches to ensure safe clearance during boarding and loading operations."
+},
   {
     "question": "<div class=\"question\">What does the red color marking on the ramp signify?</div>",
     "options": [
       "Service roads with speed limits",
-      "Equipment Restraint Area (ERA) and No Parking zones",
+      "Equipment Restraint Area (ERA) and No Standing No Parking zones",
       "Taxiway center lines and stop points",
       "Restricted/Hazardous Zones like fuel stations"
     ],
@@ -269,7 +248,7 @@ window.addEventListener('load', () => {
       "15 km/h",
       "5 km/h",
       "30 km/h",
-      "0 km/h (No Parking Zone)"
+      "No Speed limit as its perimeter wall"
     ],
     "answer_index": 2,
     "explanation": "The speed limit near the perimeter wall is 30 km/h, allowing a slightly faster speed compared to service roads."
@@ -318,17 +297,13 @@ window.addEventListener('load', () => {
     "answer_index": 2,
     "explanation": "The Wing Walker acts as the eyes and ears on the ground, staying 1 meter from the wingtip and ensuring the plane doesn’t hit obstacles."
   },
-  {
-    "question": "<div class=\"question\">Why do planes still require wing walkers if the center line guides their path?</div>",
-    "options": [
-      "Because the center line can be hard to see in bad weather",
-      "Because planes don’t have side mirrors to check for obstacles on the wings",
-      "Because wing walkers operate the aircraft’s brakes",
-      "Because wing walkers direct passengers during boarding"
-    ],
-    "answer_index": 1,
-    "explanation": "Planes lack side mirrors, so wing walkers ensure wings do not clip any obstacles during movement."
-  },
+{
+  "question": "<div class=\"question\">Whose approval should an employee take before using a fire extinguisher at airside?<span class=\"asked-in\"></span></div>",
+  "options": ["Fire safety officer", "Supervisor on duty", "No approval needed", "Airport security"],
+  "answer_index": 2,
+  "explanation": "In case of fire emergencies at airside, employees do not need prior approval to use a fire extinguisher. Immediate action is critical to safety."
+},
+
 {
     "question": "<div class=\"question\">What distinguishes a Pushback Bay from a Power Out Bay in aircraft parking?</div>",
     "options": [
@@ -368,7 +343,7 @@ window.addEventListener('load', () => {
       "The aircraft captain",
       "The marshaller",
       "The Flight Manager",
-      "The Aircraft Maintenance Engineer (AME)"
+      "Apron Controller"
     ],
     "answer_index": 1,
     "explanation": "The marshaller stands beside the emergency stop button during VDGS operation to halt movement if necessary."
@@ -409,13 +384,13 @@ window.addEventListener('load', () => {
   {
     "question": "<div class=\"question\">What is the Equipment Restraint Area (ERA)?</div>",
     "options": [
-      "An area where only certain ground equipment is allowed and must be parked neatly",
+      "An area where only certain ground equipment is allowed and must be parked neatly outside the ERA.",
       "The runway for aircraft landing",
       "The passenger boarding bridge",
       "A public waiting zone"
     ],
     "answer_index": 0,
-    "explanation": "ERA is a designated zone for specific ground equipment to park safely and orderly, like a VIP parking lot for vehicles."
+    "explanation": "ERA is a designated zone for specific ground equipment to park safely and orderly,outside the ERA, in normal weather conditions."
   },
   {
     "question": "<div class=\"question\">What is the purpose of the Tail Clearance Line (TCL)?</div>",
@@ -429,28 +404,18 @@ window.addEventListener('load', () => {
     "explanation": "The TCL ensures that when the aircraft's nose wheel stops, the tail remains safely inside the line to avoid collisions."
   },
   {
-    "question": "<div class=\"question\">What color marks the service road used by ground vehicles on the apron?</div>",
+    "question": "<div class=\"question\">What color marks the service road and what is the speed limit for any vehicles used by ground crew?</div>",
     "options": [
-      "Yellow",
-      "Red",
-      "White",
-      "Blue"
+      "Yellow and 5 kmph",
+      "Red and no speed limit",
+      "White and 15 kmph",
+      "Blue and 30 kmph"
     ],
     "answer_index": 2,
-    "explanation": "The service road on the apron is marked with white color lines and is used by support vehicles."
+    "explanation": "The service road  is marked with white color lines and speed limit is limited to 15 kmph for support vehicles."
   },
-  {
-    "question": "<div class=\"question\">What speed limit must ground vehicles adhere to on the apron?</div>",
-    "options": [
-      "15 kmph",
-      "30 kmph",
-      "50 kmph",
-      "No speed limit"
-    ],
-    "answer_index": 1,
-    "explanation": "Ground vehicles must not exceed 30 kmph on the apron to ensure safety."
-  },
-  {
+ 
+   {
     "question": "<div class=\"question\">Why are wing walkers necessary during aircraft parking despite the presence of yellow center lines?</div>",
     "options": [
       "Because planes have no side mirrors and wing walkers ensure wings don't hit obstacles",
@@ -483,6 +448,7 @@ window.addEventListener('load', () => {
     "answer_index": 0,
     "explanation": "Airside refers to operational areas like bays, aprons, and taxiways, while landside covers public areas like check-in and arrivals."
   },
+
   {
     "question": "<div class=\"question\">What does the 'stop point' signify on the aircraft parking bay?</div>",
     "options": [
@@ -614,7 +580,7 @@ window.addEventListener('load', () => {
   }
 
   function startTimer() {
-    let remainingTime = 40;
+    let remainingTime = 60;
     const timer = document.getElementById("timer");
     timer.textContent = `Time: ${remainingTime}s`;
     timer.className = "timer green";
@@ -835,20 +801,27 @@ window.addEventListener('load', () => {
   };
 
   // View incorrect answers (simplified alert)
-  window.viewIncorrectAnswers = function () {
-    let msg = "Incorrect Answers:\n";
+ window.viewIncorrectAnswers = function () {
+  function stripHtml(html) {
+    let tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
 
-    answeredQuestions.forEach((ans, idx) => {
-      if (ans && ans !== true) {
-        const q = quizData[idx];
-        msg += `Q${idx + 1}: ${q.question}\nYour Answer: ${q.options[ans.userAnswer] || "No Answer"}\nCorrect Answer: ${q.options[ans.correctAnswer]}\n\n`;
-      }
-    });
+  let msg = "Incorrect Answers:\n";
 
-    if (msg === "Incorrect Answers:\n") msg = "No incorrect answers to show.";
+  answeredQuestions.forEach((ans, idx) => {
+    if (ans && ans !== true) {
+      const q = quizData[idx];
+      msg += `Q${idx + 1}: ${stripHtml(q.question)}\nYour Answer: ${q.options[ans.userAnswer] || "No Answer"}\nCorrect Answer: ${q.options[ans.correctAnswer]}\n\n`;
+    }
+  });
 
-    alert(msg);
-  };
+  if (msg === "Incorrect Answers:\n") msg = "No incorrect answers to show.";
+
+  alert(msg);
+};
+
 
   // Generate PDF from history (simplified)
   window.generatePDF = function () {

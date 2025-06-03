@@ -136,6 +136,39 @@ img {
     border-radius: 5px;
 }
 
+#scroll-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#scroll-buttons button {
+  background-color: #005f99;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#scroll-buttons button:hover {
+  background-color: #004577;
+  transform: scale(1.1);
+}
+
+.image-container {
+    margin-bottom: 20px; /* or more if needed */
+}
+
+
 /* Footer */
 footer {
     text-align: center;

@@ -29,6 +29,13 @@
   <div class="footnote">Prepared by Krishnanunni</div>
 
   <script src="script_qone.js" defer></script>
+<script>
+  const completed = JSON.parse(localStorage.getItem('completedModules') || '[]');
+  if (!completed.includes('day1')) {
+    completed.push('day1');
+    localStorage.setItem('completedModules', JSON.stringify(completed));
+  }
+</script>
 
 </body>
 </html>

@@ -485,19 +485,26 @@ window.addEventListener('load', () => {
   };
 
   window.viewIncorrectAnswers = function () {
-    let msg = "Incorrect Answers:\n";
+  function stripHtml(html) {
+    let tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
 
-    answeredQuestions.forEach((ans, idx) => {
-      if (ans && ans !== true) {
-        const q = quizData[idx];
-        msg += `Q${idx + 1}: ${q.question}\nYour Answer: ${q.options[ans.userAnswer] || "No Answer"}\nCorrect Answer: ${q.options[ans.correctAnswer]}\n\n`;
-      }
-    });
+  let msg = "Incorrect Answers:\n";
 
-    if (msg === "Incorrect Answers:\n") msg = "No incorrect answers to show.";
+  answeredQuestions.forEach((ans, idx) => {
+    if (ans && ans !== true) {
+      const q = quizData[idx];
+      msg += `Q${idx + 1}: ${stripHtml(q.question)}\nYour Answer: ${q.options[ans.userAnswer] || "No Answer"}\nCorrect Answer: ${q.options[ans.correctAnswer]}\n\n`;
+    }
+  });
 
-    alert(msg);
-  };
+  if (msg === "Incorrect Answers:\n") msg = "No incorrect answers to show.";
+
+  alert(msg);
+};
+
 
   window.generatePDF = function () {
     const user = getCurrentUser();
