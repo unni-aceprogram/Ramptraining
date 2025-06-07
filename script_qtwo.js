@@ -87,9 +87,9 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">What is 'Hotel Mode' in an ATR aircraft?</div>",
-    "options": ["Crew rest mode", "Passenger entertainment mode", "Power from APU when engines are off", "External power via GPU"],
+    "options": ["Crew rest mode", "Passenger entertainment mode", "Power from engines no 2 on starboard side, when GPU is not connected", "External power via GPU"],
     "answer_index": 2,
-    "explanation": "Hotel Mode refers to using the aircraft's APU to power systems while engines are off."
+    "explanation": "Hotel Mode refers to using the aircraft's engines no 2 on starboard side, to power systems while the propeller remains feathered and is held stationary using the propeller brake."
   },
   {
     "question": "<div class=\"question\">Which doors are used in a 3-door operation for the Airbus A320?</div>",

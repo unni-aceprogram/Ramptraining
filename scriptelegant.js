@@ -224,3 +224,5 @@ document.addEventListener('touchstart', function (e) {
 document.addEventListener('gesturestart', function (e) {
   e.preventDefault();
 });
+
+
