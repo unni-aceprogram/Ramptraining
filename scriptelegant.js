@@ -66,14 +66,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- Slideshow Setup ---
   const images = [
-    "img/ev.jpg", "img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg",
-    "img/img5.jpg", "img/img6.jpg", "img/img7.jpg", "img/img8.jpg", "img/img9.jpg"
+    "img/ev.png", "img/img1.png", "img/img2.png", "img/img3.png", "img/img4.png",
+    "img/img5.png", "img/img6.png", "img/img7.png", "img/img8.png", "img/img9.png"
   ];
   const captions = [
-    "Passenger Coach", "Trestle", "Aircraft tug towing a plane", "Fuel truck refueling aircraft",
-    "Pushback tractor in action", "Ground crew guiding a plane", "Passenger boarding stairs",
-    "Deicing vehicle in winter", "Cargo loader at work", "Aircraft maintenance team"
-  ];
+    "Passenger Coach", "Trestle", "BFL", "TUG",
+    "Passenger Ramp", "APU", "GPU",
+    "Trolley"];
   let currentIndex = 0;
   const img = document.getElementById("slideshow-img");
   const caption = document.getElementById("caption");
