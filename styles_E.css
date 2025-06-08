@@ -1,3 +1,8 @@
+/* Global Box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +11,7 @@ body {
     color: #333;
 }
 
+/* Header centered separately */
 header {
     text-align: center;
     padding-bottom: 20px;
@@ -128,6 +134,7 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .image-container img {
@@ -136,45 +143,40 @@ img {
     border-radius: 5px;
 }
 
+.standard-img {
+    max-width: 100%; /* Prevent image from exceeding container width */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Removes inline gap issues */
+    margin: 0 auto;  /* Center image horizontally if needed */
+}
+
 #scroll-buttons {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
 }
 
 #scroll-buttons button {
-  background-color: #005f99;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  transition: background-color 0.3s, transform 0.2s;
+    background-color: #005f99;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #scroll-buttons button:hover {
-  background-color: #004577;
-  transform: scale(1.1);
+    background-color: #004577;
+    transform: scale(1.1);
 }
-
-.image-container {
-    margin-bottom: 20px; /* or more if needed */
-}
-
-.standard-img {
-  max-width: 100%; /* Prevent image from exceeding container width */
-  height: auto;    /* Maintain aspect ratio */
-  display: block;  /* Removes inline gap issues */
-  margin: 0 auto;  /* Center image horizontally if needed */
-}
-
 
 /* Footer */
 footer {
@@ -183,4 +185,61 @@ footer {
     background: #f0f0f0;
     font-size: 14px;
     color: #777;
+}
+
+/* Only slideshow section shown below for clarity */
+
+.slideshow-container {
+    position: relative;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.slideshow-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  border: none;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 3px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.caption-text {
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #fafafa;
+    border-top: 1px solid #ddd;
 }

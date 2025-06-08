@@ -63,33 +63,63 @@
   showPage(1);
 })();
 
-// Scroll Buttons Script
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Slideshow Setup ---
+  const images = [
+    "img/ev.jpg", "img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg",
+    "img/img5.jpg", "img/img6.jpg", "img/img7.jpg", "img/img8.jpg", "img/img9.jpg"
+  ];
+  const captions = [
+    "Passenger Coach", "Trestle", "Aircraft tug towing a plane", "Fuel truck refueling aircraft",
+    "Pushback tractor in action", "Ground crew guiding a plane", "Passenger boarding stairs",
+    "Deicing vehicle in winter", "Cargo loader at work", "Aircraft maintenance team"
+  ];
+  let currentIndex = 0;
+  const img = document.getElementById("slideshow-img");
+  const caption = document.getElementById("caption");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  function updateSlideshow() {
+    if (!img || !caption) return;
+    img.src = images[currentIndex];
+    img.alt = captions[currentIndex] || "Slideshow image";
+    caption.textContent = captions[currentIndex] || "";
+  }
+
+  function changeSlide(n) {
+    currentIndex = (currentIndex + n + images.length) % images.length;
+    updateSlideshow();
+  }
+
+  if (prev) prev.addEventListener("click", () => changeSlide(-1));
+  if (next) next.addEventListener("click", () => changeSlide(1));
+  updateSlideshow();
+
+  // --- Scroll Buttons ---
   const scrollUpBtn = document.getElementById('scroll-up');
   const scrollDownBtn = document.getElementById('scroll-down');
 
-  if (scrollUpBtn && scrollDownBtn) {
+  if (scrollUpBtn) {
     scrollUpBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
 
+  if (scrollDownBtn) {
     scrollDownBtn.addEventListener('click', () => {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
   }
 
-  // Module Progress Tracking Script
+  // --- Module Progress Tracking ---
   const moduleSequence = ['day1', 'quiz1', 'day2', 'quiz2', 'quiz3'];
   const buttons = document.querySelectorAll('.day-button');
 
-  // Disable all buttons except Day 1
+  // Disable all buttons except Day 1 initially
   buttons.forEach(btn => {
     const day = btn.dataset.day;
-    if (day === 'day1') {
-      btn.disabled = false;
-    } else {
-      btn.disabled = true;
-    }
+    btn.disabled = day !== 'day1';
   });
 
   // Restore progress from localStorage
@@ -100,13 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentDay = btn.dataset.day;
       const index = moduleSequence.indexOf(currentDay);
 
-      if (index === 0 || completedModules.includes(moduleSequence[index - 1])) {
-        btn.disabled = false;
-      } else {
-        btn.disabled = true;
-      }
+      btn.disabled = !(index === 0 || completedModules.includes(moduleSequence[index - 1]));
 
-      // Add completed style
       if (completedModules.includes(currentDay)) {
         btn.classList.add('completed');
       }
@@ -115,114 +140,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateButtonStates();
 
-  // Attach click handlers to store progress
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const day = btn.dataset.day;
       if (!completedModules.includes(day)) {
         completedModules.push(day);
         localStorage.setItem('completedModules', JSON.stringify(completedModules));
-        updateButtonStates(); // Update UI after marking as complete
+        updateButtonStates();
       }
     });
   });
-});
 
+  // --- Anti Right-Click and Screenshot Protection ---
+  document.addEventListener('contextmenu', e => e.preventDefault());
 
-// Anti Right-Click and Screenshot Protection
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
+  document.addEventListener('keydown', e => {
+    if (e.key === 'PrintScreen') {
+      navigator.clipboard.writeText('').catch(() => {});
+      alert('Screenshots are disabled on this page.');
+      e.preventDefault();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+      alert('Printing is disabled on this page.');
+      e.preventDefault();
+    }
+  });
 
-// Block PrintScreen key
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'PrintScreen') {
-    navigator.clipboard.writeText(''); // Try to overwrite clipboard
-    alert('Screenshots are disabled on this page.');
-    e.preventDefault();
+  // --- Blur on Tab Switch (Privacy) ---
+  function blurScreen() {
+    document.body.style.filter = 'blur(5px)';
+  }
+  function unblurScreen() {
+    document.body.style.filter = 'none';
   }
 
-  // Block Ctrl+P or Cmd+P (Print)
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
-    alert('Printing is disabled on this page.');
-    e.preventDefault();
-  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) blurScreen();
+    else unblurScreen();
+  });
+
+  // --- Mobile Gesture Blocking ---
+  document.addEventListener('touchstart', e => {
+    if (e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener('gesturestart', e => e.preventDefault());
 });
-
-// Attempt to block screen recording detection (basic level)
-function blurScreen() {
-  document.body.style.filter = 'blur(5px)';
-}
-function unblurScreen() {
-  document.body.style.filter = 'none';
-}
-
-// Triggers blur on page visibility change (optional trick)
-document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
-    blurScreen();
-  } else {
-    unblurScreen();
-  }
-});
-
-
-// On mobile: block long press and screenshot gestures
-document.addEventListener('touchstart', function (e) {
-  if (e.touches.length > 1) {
-    e.preventDefault(); // Block multi-finger gestures
-  }
-}, { passive: false });
-
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
-
-// Anti Right-Click and Screenshot Protection
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
-
-// Block PrintScreen key
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'PrintScreen') {
-    navigator.clipboard.writeText(''); // Try to overwrite clipboard
-    alert('Screenshots are disabled on this page.');
-    e.preventDefault();
-  }
-
-  // Block Ctrl+P or Cmd+P (Print)
-  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
-    alert('Printing is disabled on this page.');
-    e.preventDefault();
-  }
-});
-
-// Optional: Blur content when switching tabs (light deterrent)
-function blurScreen() {
-  document.body.style.filter = 'blur(5px)';
-}
-function unblurScreen() {
-  document.body.style.filter = 'none';
-}
-
-document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
-    blurScreen();
-  } else {
-    unblurScreen();
-  }
-});
-
-// Mobile gesture blocking
-document.addEventListener('touchstart', function (e) {
-  if (e.touches.length > 1) {
-    e.preventDefault(); // Prevent multi-finger gestures
-  }
-}, { passive: false });
-
-document.addEventListener('gesturestart', function (e) {
-  e.preventDefault();
-});
-
-
