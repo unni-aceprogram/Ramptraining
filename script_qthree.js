@@ -64,7 +64,7 @@ window.addEventListener('load', () => {
   {
     "question": "<div class=\"question\">Which component powers the aircraft systems in Hotel Mode?</div>",
     "options": ["GPU", "Battery", "Main engine", "APU"],
-    "answer_index": 3,
+    "answer_index": 2,
     "explanation": "The ATR doesn't have APU (Auxiliary Power Unit), hence it relies on Engine no:2  to power the aircraft's electrical and air systems with propellers  on brake."
   },
 {
