@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
     "question": "<div class=\"question\">Which of the following components is used by the aircraft for power when A/C engines are off and before connecting a GPU?</div>",
     "options": ["Main avionics", "External lights", "Own APU for power", "Landing gear"],
     "answer_index": 2,
-    "explanation": "In Hotel Mode, the aircraft uses its own APU. If a GPU is connected, the aircraft is drawing power externally, not using Hotel Mode."
+    "explanation": "The aircraft uses its own APU for power, before GPU is connected. If a GPU is connected, the aircraft is drawing power externally."
   },
   {
     "question": "<div class=\"question\">Why is the A321’s door L4 used in 3-door operation instead of L2?</div>",
@@ -401,7 +401,7 @@ window.addEventListener('load', () => {
       "IndiGo has discontinued using BFL at airside"
     ],
     "answer_index": 1,
-    "explanation": "BFL should be switched on outside the ERA, as activating it near the holds can allow smoke to enter them. This may trigger the ceiling-mounted smoke detectors and cause a false fire warning on the flight deck."
+    "explanation": "BFL should be switched on outside the ERA, as activating it near the holds can allow smoke to enter holds. This may trigger the ceiling-mounted smoke detectors and cause a false fire warning on the flight deck."
   },
   {
     "question": "<div class=\"question\">What color marks the service road and what is the speed limit for any vehicles used by ground crew?</div>",
