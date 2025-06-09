@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
     "question": "<div class=\"question\">What does FOD stand for on the airport ramp?</div>",
     "options": ["Foreign Object Device", "Flight Operations Division", "Foreign Object Debris", "Field Operations Duty"],
     "answer_index": 2,
-    "explanation": "FOD stands for Foreign Object Debris, referring to anything on the ramp that shouldn't be there—like tools, stones, or trash."
+    "explanation": "FOD stands for Foreign Object Debris, referring to anything on the ramp(esp. bay) that shouldn't be there—like tools, stones, or trash."
   },
   {
     "question": "<div class=\"question\">When should a FOD check be conducted?</div>",
@@ -137,7 +137,7 @@ window.addEventListener('load', () => {
     "explanation": "HUM must be loaded in the bulk hold (compartment 5), head facing the nose, to ensure respect and proper handling during flight."
   },
   {
-    "question": "At what wind speed should ramp operations start being shut down according to the wind chart?",
+    "question": "At what wind speed should ramp operations must being shut down according to the wind chart?",
     "options": [
       "Above 60 knots",
       "10-20 knots",

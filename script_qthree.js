@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">What should be done if a FOD bin is missing from a bay area?</div>",
-    "options": ["Report to flight crew", "Store FOD in personal kit temporarily", "Go to the passenger ramp where another FOD bin is located", "Leave FOD near aircraft until a bin arrives"],
+    "options": ["Report to flight crew", "Store FOD in personal kit temporarily", "Use the FOD bin in the passenger ramp", "Leave FOD near aircraft until a bin arrives"],
     "answer_index": 2,
     "explanation": "If the FOD bin is missing from the bay, the ramp crew is instructed to use the one available at the passenger ramp."
   },
@@ -65,22 +65,22 @@ window.addEventListener('load', () => {
     "question": "<div class=\"question\">Which component powers the aircraft systems in Hotel Mode?</div>",
     "options": ["GPU", "Battery", "Main engine", "APU"],
     "answer_index": 3,
-    "explanation": "Hotel Mode relies on the APU (Auxiliary Power Unit) to power the aircraft's electrical and air systems with engines off."
+    "explanation": "The ATR doesn't have APU (Auxiliary Power Unit), hence it relies on Engine no:2  to power the aircraft's electrical and air systems with propellers  on brake."
   },
 {
   "question": "<div class=\"question\">You see an unsafe work practice on the ramp or in the terminal. What should you do?<span class=\"asked-in\"></span></div>",
-  "options": ["Ignore it", "Report to Safety", "Report to MOD on shift", "Both A and B"],
+  "options": ["Report to MOD on shift", "Report to Safety", "Ignore it", "Both A and B"],
   "answer_index": 3,
   "explanation": "The correct action is to report the unsafe work practice to both Safety and the Manager on Duty (MOD). This ensures immediate action and proper documentation to maintain a safe working environment."
 },
   {
-    "question": "<div class=\"question\">Which of the following components is used by the aircraft only in Hotel Mode and not when using a GPU?</div>",
+    "question": "<div class=\"question\">Which of the following components is used by the aircraft for power when A/C engines are off and before connecting a GPU?</div>",
     "options": ["Main avionics", "External lights", "Own APU for power", "Landing gear"],
     "answer_index": 2,
     "explanation": "In Hotel Mode, the aircraft uses its own APU. If a GPU is connected, the aircraft is drawing power externally, not using Hotel Mode."
   },
   {
-    "question": "<div class=\"question\">Why is the A321’s door L4 used in 3-door operation instead of L2( Not STRETCH A/C) ?</div>",
+    "question": "<div class=\"question\">Why is the A321’s door L4 used in 3-door operation instead of L2?</div>",
     "options": ["L2 is smaller", "To reduce crew workload", "A321 has L1,L3,L4 only on portside", "L2 is only for emergencies"],
     "answer_index": 2,
     "explanation": "The A321 is longer, and has L1,L3,L4 only on portside,  L2 does not exist."
@@ -100,9 +100,9 @@ window.addEventListener('load', () => {
 },
   {
     "question": "<div class=\"question\">How is Hotel Mode different from GPU usage in powering the ATR?</div>",
-    "options": ["GPU powers avionics, APU powers hydraulics", "Hotel Mode uses internal APU; GPU is external support", "GPU runs during takeoff", "There is no difference"],
+    "options": ["GPU powers avionics, APU powers hydraulics", "Hotel Mode uses power from Engine 2, GPU is external support", "GPU runs during takeoff", "There is no difference"],
     "answer_index": 1,
-    "explanation": "Hotel Mode refers to the ATR using its own APU to power systems; GPU provides external electrical power instead."
+    "explanation": "Hotel Mode refers to the ATR using engine 2 to power systems; GPU provides external electrical power instead."
   },
 {
     "question": "Why must the head of Human Remains (HUM) face the nose of the aircraft during loading?",
@@ -393,15 +393,15 @@ window.addEventListener('load', () => {
     "explanation": "ERA is a designated zone for specific ground equipment to park safely and orderly,outside the ERA, in normal weather conditions."
   },
   {
-    "question": "<div class=\"question\">What is the purpose of the Tail Clearance Line (TCL)?</div>",
+    "question": "<div class=\"question\">Where is BFL switched on?</div>",
     "options": [
-      "To ensure the aircraft's tail stays clear of adjacent taxiways when parked",
-      "To mark the passenger boarding area",
-      "To designate speed limits for vehicles",
-      "To indicate the runway threshold"
+      "Inside ERA",
+      "Outside ERA",
+      "Both A & B",
+      "IndiGo has discontinued using BFL at airside"
     ],
-    "answer_index": 0,
-    "explanation": "The TCL ensures that when the aircraft's nose wheel stops, the tail remains safely inside the line to avoid collisions."
+    "answer_index": 1,
+    "explanation": "BFL should be switched on outside the ERA, as activating it near the holds can allow smoke to enter them. This may trigger the ceiling-mounted smoke detectors and cause a false fire warning on the flight deck."
   },
   {
     "question": "<div class=\"question\">What color marks the service road and what is the speed limit for any vehicles used by ground crew?</div>",
@@ -450,15 +450,15 @@ window.addEventListener('load', () => {
   },
 
   {
-    "question": "<div class=\"question\">What does the 'stop point' signify on the aircraft parking bay?</div>",
+    "question": "<div class=\"question\">Can Water cart and Toilet cart be handled by same Agile Partner in a particular shift?</div>",
     "options": [
-      "Where the aircraft's nose wheel must stop during parking",
-      "The start of the runway",
-      "Where the wing walkers stand",
-      "The location of the emergency stop button"
+      "With approval from Flight Manager",
+      "Yes, no approval required",
+      "NO",
+      "With approval from Agile Team Leader"
     ],
-    "answer_index": 0,
-    "explanation": "The stop point is a marked location where the aircraft's nose wheel should precisely stop for correct parking alignment."
+    "answer_index": 2,
+    "explanation": "Due to safety reasons, Water cart and Toilet cart are handeled by different Agile Staff in same shift."
   }
 
 

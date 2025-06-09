@@ -78,7 +78,7 @@ window.addEventListener('load', () => {
     "question": "<div class=\"question\">Which equipment connects ATR aircraft with the ground crew for boarding?<span class=\"asked-in\"></span></div>",
     "options": ["Trestle", "Passenger Ramp", "Aerobridge", "GPU"],
     "answer_index": 1,
-    "explanation": "The trestle is a specialized step system used for boarding ATR aircraft."
+    "explanation": "The Passenger Ramp is a specialized step system used for boarding ATR aircraft."
   },
   {
     "question": "<div class=\"question\">Which statement is a correct Do for airside safety?<span class=\"asked-in\"></span></div>",
