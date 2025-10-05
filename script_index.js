@@ -3,7 +3,7 @@ let theme = localStorage.getItem('theme') || 'Millennial';
 function applyTheme(newTheme) {
   theme = newTheme;
   localStorage.setItem('theme', theme);
-  const buttonLabel = theme === 'Millennial' ? 'Millennial (Study Mode)' : 'GenZ (Story Mode)';
+  const buttonLabel = theme === 'Millennial' ? 'Study Mode' : 'Story Mode';
   document.getElementById('theme-toggle').textContent = buttonLabel;
 
   const loggedInUser = localStorage.getItem('user');
@@ -147,4 +147,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   applyTheme(theme);
+
 });
