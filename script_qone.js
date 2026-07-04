@@ -34,9 +34,9 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">Which of the following is not part of the Personal Protective Equipment (PPE) kit?<span class=\"asked-in\"></span></div>",
-    "options": ["Ramp Jacket", "Safety Shoes", "Helmet", "Earplugs"],
+    "options": ["Ramp Jacket", "Safety Shoes", "Mouth Guard", "Earplugs"],
     "answer_index": 2,
-    "explanation": "The PPE kit includes Ramp Jacket, Safety Shoes, Earplugs, Safety Gloves, Cap, Face Shield, Rainwear and Rain Boots—but not a helmet."
+    "explanation": "The PPE kit includes Ramp Jacket, Safety Shoes, Earplugs, Safety Gloves, Cap, Face Shield, Rainwear and Rain Boots—but not a mouth guard(used to protect teeth) ."
   },
   {
     "question": "<div class=\"question\">What is a 'bay' in the context of airport ramp operations?<span class=\"asked-in\"></span></div>",
@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">Which of these vehicles is used to move aircraft or baggage trolleys?<span class=\"asked-in\"></span></div>",
-    "options": ["Passenger Ramp", "Trussel", "TUG", "Water Cart"],
+    "options": ["Passenger Ramp", "Trestle", "TUG", "Water Cart"],
     "answer_index": 2,
     "explanation": "The TUG is used to tow aircraft and baggage trolleys at the airport."
   },
