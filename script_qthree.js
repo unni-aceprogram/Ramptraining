@@ -213,10 +213,10 @@ window.addEventListener('load', () => {
     "explanation": "Walking under aerobridges when they are in motion is explicitly listed as a ‘Don’t’ for airside safety."
   },
 {
-  "question": "<div class=\"question\"> During day time, if a wing walker sees an obstruction on the bay as the aircraft approaches, what should they do?<span class=\"asked-in\"></span></div>",
-  "options": ["Red wand down", "Red wand up", "Red Baton up", "Red Baton down"],
+  "question": "<div class=\"question\"> During day time, if a wing walker sees an obstruction on the bay as the aircraft is taxiing in, what should they do?<span class=\"asked-in\"></span></div>",
+  "options": ["Red wand down", "Red wand up", "Red Baton up and crossed", "Red Baton down and crossed"],
   "answer_index": 2,
-  "explanation": "When a wing walker sees an obstruction, they should raise the red baton straight up to stop A/C immediately and prevent a collision or unsafe condition."
+  "explanation": "When a wing walker sees an obstruction, they should raise the red baton straight up and crossed above head to stop A/C immediately and prevent a collision or unsafe condition."
 },
 {
   "question": "<div class=\"question\">What precautions should be taken while aircraft fueling is in progress?<span class=\"asked-in\"></span></div>",
