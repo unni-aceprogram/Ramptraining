@@ -45,9 +45,9 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">Before approaching an aircraft, what must be confirmed according to ramp safety procedure?</div>",
-    "options": ["Cabin lights are on", "Ground staff are nearby", "Engines off, ACB off, chocks in place, and engineer's thumbs up", "Fueling is completed"],
+    "options": ["Cabin lights are on", "Ground staff are nearby", "A/C Stopped,Engines off, ACB off, chocks in place, and engineer's thumbs up", "Fueling is completed"],
     "answer_index": 2,
-    "explanation": "Approach is only safe after engines are off, ACB is off, chocks are placed, and the engineer signals all-clear."
+    "explanation": "Approach is only safe after A/C is completely stopped engines are off, ACB is off, chocks are placed, and the engineer signals all-clear."
   },
   {
     "question": "<div class=\"question\">Where is the ACB located on an Airbus aircraft?</div>",
@@ -75,7 +75,7 @@ window.addEventListener('load', () => {
   },
   {
     "question": "<div class=\"question\">Which aircraft has six passenger doors: L1, L3, L4, R1, R3, R4?</div>",
-    "options": ["ATR", "A321", "A320", "B737"],
+    "options": ["ATR", "A321", "A320", "Cessna 182 Skylane"],
     "answer_index": 1,
     "explanation": "The Airbus A321 has six passenger doors, unlike the A320 or ATR."
   },
